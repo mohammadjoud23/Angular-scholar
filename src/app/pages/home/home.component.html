@@ -1,0 +1,30 @@
+<!-- <p-skeleton shape="square" size="100px"></p-skeleton> -->
+<div>
+    <div class="grid">
+        <div class="col-12 md:col-3 lg:col-6">
+            <p-skeleton shape="card" size="275px"></p-skeleton>
+        </div>
+        <div class="col-12 md:col-3 lg:col-6">
+            <p-skeleton shape="card" size="370px"></p-skeleton> <br>
+            <p-skeleton shape="card" width="175%" height="20px"></p-skeleton>
+        </div>
+        <div class="col-12 md:col-3 lg:col-6">
+            <p-skeleton shape="card" size="130px"></p-skeleton>
+        </div>
+        <div class="col-12 md:col-3 lg:col-6">
+            <p-skeleton shape="card" size="130px"></p-skeleton>
+        </div>
+    </div>
+
+    <div class="slider">
+        <app-slider [items]="scholarships"></app-slider>
+    </div>
+</div>
+
+
+<div class="items-banner">
+    <app-items-banner [items]="scholarships"></app-items-banner>
+</div>
+
+
+<!-- <pre>{{scholarships | json}}</pre> -->

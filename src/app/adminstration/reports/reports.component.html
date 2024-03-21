@@ -1,0 +1,83 @@
+<p-toast key="t2" position="top-right"></p-toast>
+<h2> Scholarships Reports </h2>
+
+<div class="container">
+    <div>
+        <p-table [value]="scholarshipsReports" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th></th>
+                    <th>Username</th>
+                    <th>Scholarship</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-report let-index="index">
+                <tr>
+                    <td>
+                        <p-avatar image="{{report.user.image|userImage}}" styleClass="mr-2" size="xlarge"
+                            shape="circle">
+                        </p-avatar>
+                    </td>
+                    <td>{{report.user.name}}</td>
+                    <td [routerLink]="'/scholarship/'+report.scholarship.id" class="link">{{report.scholarship.name}}
+                    </td>
+                    <td>{{report.title}}</td>
+                    <td>{{report.body}}</td>
+                    <td>{{report.created_at|date}}</td>
+                    <td>
+                        <div class="but">
+                            <button pButton class="p-notify-sm" icon="pi pi-send" label="Notify"
+                                (click)="notifyScholarshipsReport(report.id,report)"></button>
+                            <button pButton class="p-button-sm" icon="pi pi-trash" label="Delete"
+                                (click)="deleteScholarshipReport(report.id,report,scholarshipsReports.indexOf(report))"></button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div> <br>
+
+    <h2> Posts Reports </h2>
+    <div>
+        <p-table [value]="postsReports" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th></th>
+                    <th>Username</th>
+                    <th>Post</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-report let-index="index">
+                <tr>
+                    <td>
+                        <p-avatar image="{{report.user.image|userImage}}" styleClass="mr-2" size="xlarge"
+                            shape="circle">
+                        </p-avatar>
+                    </td>
+                    <td>{{report.user.name}}</td>
+                    <td>{{report.post.body}}</td>
+                    <td>{{report.title}}</td>
+                    <td>{{report.body}}</td>
+                    <td>{{report.created_at|date}}</td>
+                    <td>
+                        <div class="but">
+                            <button pButton class="p-notify-sm" icon="pi pi-send" label="Notify"
+                                (click)="notifyPostsReport(report.id,report)"></button>
+                            <button pButton class="p-button-sm" icon="pi pi-trash" label="Delete"
+                                (click)="deletePostReport(report.id,report,postsReports.indexOf(report))"></button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div> <br>
+
+</div>

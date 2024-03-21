@@ -1,0 +1,162 @@
+// new edit
+@import "../../../styles/colors";
+header {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    height: 65px;
+    background-color: $bgColorLight;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    &-logo {
+      display: block;
+      img {
+        width: 60px;
+      }
+    }
+    &-links {
+      display: block;
+      // padding: 0;
+      // margin: 0;
+      margin-right: 1100px;
+      list-style: none;
+
+      li {
+        display: inline;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+.signout {
+  padding: 0;
+  margin-left: 950px;
+}
+.app-icon {
+  align-items: center;
+  font-size: 1rem;
+  padding: 0;
+  margin-left: 3px;
+  margin-top: 20rem;
+}
+
+// th {
+//   color: $primaryColor;
+// }
+
+
+h2 {
+  margin-left: 20px;
+}
+
+
+
+.scholarship-item {
+  position: relative;
+  display: block;
+  min-height: 325px;
+  border-radius: 5px;
+  background-color: $bgColorLight;
+  border: 1px solid $lightGray;
+  display: inline-block;
+  margin-left: 18px;
+  width: 100%;
+
+
+  &-image {
+    img {
+      width: 100%;
+      border-radius: 5px;
+      height: 275px;
+      object-fit: cover;
+    }
+  }
+  &-rating {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+    background-color: $bgColorLight;
+    border-radius: 5px;
+    padding: 5px 10px;
+    .app-icon {
+      color: #d4af37;
+      margin-right: 5px;
+    }
+  }
+  &-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 0.5rem;
+    height: 30px;
+    justify-content: space-between;
+  }
+}
+
+.p-button.p-button-danger, .p-buttonset.p-button-danger > .p-button, .p-splitbutton.p-button-danger > .p-button {
+    color: #ffffff;
+    background: #ff1011;
+    border: 1px solid white;
+}
+
+.p-button.p-button-danger:enabled:hover, .p-buttonset.p-button-danger > .p-button:enabled:hover, .p-splitbutton.p-button-danger > .p-button:enabled:hover {
+  background: #aa0303;
+  color: white;
+  border-color: #f3dae1;
+}
+
+:host ::ng-deep {
+  .p-tabview-nav {
+    justify-content: center;
+
+    li .p-tabview-nav-link {
+      background: $bgColor;
+    }
+    li.p-highlight .p-tabview-nav-link {
+      background: $bgColor;
+    }
+  }
+}
+
+tr>th{
+    color: #0af482;
+}
+
+.p-button.p-button-sm {
+    font-size: 0.875rem;
+    padding: 0.4375rem 0.875rem;
+    margin-left: 10px;
+    background-color: #dd3f3f;
+    border: 1px solid #dd3f3f;
+  }
+  .p-button.p-button-sm:hover {
+    font-size: 0.875rem;
+    padding: 0.4375rem 0.875rem;
+    margin-left: 10px;
+    background-color: #e61e30; 
+    border: 1px solid #e61e30;
+  }
+  .p-button {
+    margin: 0;
+    display: inline-flex;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0.77vh 1.93vh;
+}
+.link{
+  cursor: pointer;
+  color: $primaryColor
+}
+.but{
+  display: flex;
+}

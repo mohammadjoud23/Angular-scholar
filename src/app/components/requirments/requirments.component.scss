@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+
+.description {
+  color: $primaryColor;
+  font-size: 15px;
+}
+.name {
+  font-size: 25px;
+}
+.p-button.p-button-danger {
+  margin-bottom: 1px;
+  margin-left: 15px;
+  height: 27px;
+  color: white;
+  margin-left: -8px;
+  background-color: #c40c0c;
+}
+.p-button.p-button-danger.p-button-outlined:enabled:hover, .p-buttonset.p-button-danger > .p-button.p-button-outlined:enabled:hover, .p-splitbutton.p-button-danger > .p-button.p-button-outlined:enabled:hover{
+  background: #aa0303;
+  color: white;
+  border-color: #f3dae1;
+  }

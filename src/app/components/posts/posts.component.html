@@ -1,0 +1,40 @@
+<div class="container">
+    <p-toast key="t2" position="top-right"></p-toast>
+    <div>
+        <div>
+            <div class="posts" *ngFor="let post of posts">
+                <p-panel header="{{post.user.name}}">
+                    <div class="userimage">
+                        <p-avatar image="{{post.user.image|userImage}}" styleClass="mr-2" size="xlarge" shape="circle">
+                        </p-avatar>
+                    </div>
+                    <span>{{post.created_at | date:'medium':'GMT+4' }}</span> <br><br>
+                    <p>{{post.body}}</p>
+                    <ng-container *ngIf="this.isAdmin ==='1' || this.isManager ==='2'">
+                        <button pButton class="p-button-sm" (click)="deletePost(post.id)" icon="pi pi-trash"
+                            label="Delete"></button>
+                    </ng-container>
+                    <p-dialog header="Submit Report" [(visible)]="display" [draggable]="false">
+                        <form [formGroup]="reportForm" (ngSubmit)="submitReport(post.id)">
+                            <input type="text" pInputText placeholder="title" formControlName="title"
+                                class="inp"><br><br>
+                            <textarea pInputTextarea placeholder="what's wrong?" formControlName="body"
+                                style="height: 200px; width: 400px;"></textarea>
+                            <br><br>
+                            <button pButton type="submit" label="submit"></button><br><br>
+                        </form>
+                    </p-dialog>
+                    <button pButton class="p-button" icon="pi pi-flag-fill" label="Report"
+                        *ngIf="this.post.user.name != this.user_name" (click)="showDialog()"></button><br><br>
+
+                    <app-comments [post_id]="post.id"></app-comments>
+                </p-panel><br><br>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <p-paginator [rows]="12" [totalRecords]="70" (onPageChange)="paginate($event)"></p-paginator>
+</div>

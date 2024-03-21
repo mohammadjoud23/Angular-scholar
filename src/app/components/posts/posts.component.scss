@@ -1,0 +1,97 @@
+@import "../../../styles/colors";
+
+h3 {
+  color: $primaryColor;
+  padding-top: 23px;
+}
+
+span {
+  font-size: 13px;
+  color: gray;
+  margin-left: -8px;
+}
+.date{
+  font-size: 13px;
+  color: gray;
+  margin-top: -6px;
+}
+
+p {
+  font-size: 21px;
+}
+
+:host ::ng-deep .p-panel .p-panel-header .p-panel-title {
+  color: $primaryColor;
+  font-size: 18px;
+
+}
+button {
+  margin-bottom: 10px;
+}
+
+.p-button.p-button-success.p-button-outlined, .p-buttonset.p-button-success > .p-button.p-button-outlined, .p-splitbutton.p-button-success > .p-button.p-button-outlined{
+  margin-bottom: 3.2px;
+  margin-left: 15px;
+  height: 2rem;
+  color: white;
+  background-color: seagreen;
+}
+
+
+.inp{
+  margin-top: 23px;
+}
+.comment{
+  font-size: 18px;
+  color: burlywood;
+  margin-top: 32px;
+}
+
+.p-button.p-button-danger.p-button-outlined:enabled:hover, .p-buttonset.p-button-danger > .p-button.p-button-outlined:enabled:hover, .p-splitbutton.p-button-danger > .p-button.p-button-outlined:enabled:hover{
+  color: white;
+    background-color: #c40c0c;
+    border: 1px solid;
+    height: 27px;
+}
+.p-button.p-button-danger.p-button-outlined, .p-buttonset.p-button-danger > .p-button.p-button-outlined, .p-splitbutton.p-button-danger > .p-button.p-button-outlined{
+  background-color: #e00f0f;
+  color: white;
+  border: 1px solid;
+  height: 27px;
+  margin-top: -9px;
+}
+.p-button {
+  color: #ffffff;
+  background-color: chocolate;
+  border: 1px solid darkgrey;
+  float: right;
+  height: 33px;
+  padding: 5px;
+  margin-left: 15px;
+}
+.p-button:enabled:hover {
+  background: #f86809;
+  border: 1px solid darkgrey;
+  color:#ffffff;
+  height: 33px;
+  padding: 5px;
+}
+
+:host ::ng-deep .p-panel .p-panel-header{
+  border: 1px solid #383838;
+  padding: 1rem;
+  background: #1e1e1e;
+  color: rgba(255, 255, 255, 0.87);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  width: 65%;
+  margin-left: 285px;
+}
+:host ::ng-deep .p-panel .p-panel-content {
+  width: 65%;
+  margin-left: 285px;
+}
+
+.userimage{
+  margin-left: -9px;
+}

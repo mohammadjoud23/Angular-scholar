@@ -1,0 +1,98 @@
+<!-- message received {{message|json}} <br> -->
+<!-- <div *ngIf="message"> -->
+<!-- message received {{message|json}} <br> -->
+<!-- {{message?.notification?.body}} -->
+<!-- </div> -->
+<br>
+<p-tabView>
+    <p-toast key="t2" position="top-right"></p-toast>
+    <p-tabPanel header="Posts">
+        <div class="container">
+            <div>
+                <p-table [value]="posts" responsiveLayout="scroll">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th></th>
+                            <th>Username</th>
+                            <th>Body</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-post let-index="index">
+                        <tr>
+                            <td>
+                                <p-avatar [image]="image" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                            </td>
+                            <td>{{post.user.name}}</td>
+                            <td>{{post.body}}</td>
+                            <td>{{post.created_at|date}}</td>
+                            <td>
+                                <p-dialog header="Edit Post" [(visible)]="display1" [draggable]="drag" [modal]="true"
+                                    [dismissableMask]="true">
+                                    <form [formGroup]="postDetail">
+                                        <textarea value="{{this.postBody?.body}}" pInputTextarea formControlName="body"
+                                            style="height: 200px; width: 400px;"></textarea>
+                                        <br><br>
+                                        <button pButton (click)="editPost(this.postBody.id)" type="button"
+                                            label="Edit"></button><br><br>
+                                    </form>
+                                </p-dialog>
+                                <div class="manage">
+                                    <button pButton class="p-button" (click)="showDialogg(post.id,post)"
+                                        icon="pi pi-user-edit" label="Edit"></button><br><br>
+                                    <button pButton class="p-button-sm"
+                                        (click)="deletePost(post.id,posts.indexOf(post))" icon="pi pi-trash"
+                                        label="Delete"></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div> <br>
+            <p-toast key="tl" position="top-right"></p-toast>
+            <p-dialog header="Add Post" [(visible)]="display" [style]="{width: '50vw'}" [draggable]="drag"
+                [modal]="true" [dismissableMask]="true">
+                <form [formGroup]="postDetail">
+                    <textarea pInputTextarea formControlName="body"
+                        style="height: 200px; width: 600px;"></textarea><br><br>
+                    <button pButton (click)="submitPost()" type="button" label="Post"></button>
+                </form>
+            </p-dialog>
+            <button pButton (click)="showDialog()" type="button" icon="pi pi-pencil" label="Add New Post"></button>
+
+        </div>
+    </p-tabPanel>
+
+
+    <p-tabPanel header="Features">
+        <div class="grid">
+            <div class="col-6 md:col-3 lg:col-3" *ngFor="let feature of features; let ii = index;">
+                <div class="scholarship-item">
+                    <div class="scholarship-item-rating">
+                        <span>{{feature.country}}</span>
+                    </div>
+                    <a class="scholarship-item-image" [routerLink]="'/scholarship/'+ feature.id">
+                        <img [src]="feature.thumpnail" alt="OonzZz" />
+                    </a>
+                    <div class="scholarship-item-title">
+                        {{feature.name}}
+                        <button pButton (click)="removeFeature(feature.id,feature,ii)" pRipple type="button"
+                            icon="pi pi-times" class="p-button-rounded p-button-danger"></button>
+                    </div>
+                </div>
+                <canvas baseChart [width]="200" [height]="250" [data]="pieChartData[ii]" [type]="pieChartType"
+                    [options]="pieChartOptions">
+                </canvas>
+                <div *ngFor="let item of feature.requirments; let i=index">
+                    <div class="field-checkbox">
+                        <p-checkbox name="group1" value="{{i}}"
+                            (onChange)="add($event,i,feature.requirments.length,ii,feature)">
+                        </p-checkbox>
+                        <label>{{item.description}}</label>
+                    </div>
+                </div> <br> <br>
+            </div>
+        </div>
+    </p-tabPanel>
+</p-tabView>

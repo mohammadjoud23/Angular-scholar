@@ -1,0 +1,78 @@
+@import "../../../styles/colors";
+header {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    height: 65px;
+    background-color: $bgColorLight;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    &-logo {
+      display: block;
+      img {
+        width: 60px;
+      }
+    }
+    &-links {
+      display: block;
+      width: 100%;
+      list-style: none;
+      li {
+        display: inline;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+
+.app-icon {
+  align-items: center;
+  font-size: 1rem;
+  padding: 0;
+  margin-left: 3px;
+  margin-top: 20rem;
+}
+
+:host ::ng-deep .p-dialog {
+  margin-top: -190px;
+  margin-left: -130px;
+}
+
+.signoutt{
+  margin-top: -20px;
+}
+.logo{
+  margin-left: 8px
+}
+.sidebar-links{
+  font-size: 20px;
+}
+.sidebar-links>a:hover{
+  color: $primaryColor;
+}
+.sidebar-links>div>a:hover{
+  color: $primaryColor;
+}
+input{
+  font-size: 99%;
+}
+li>a:hover{
+  color: $primaryColor;
+}
+div>div>a:hover{
+  color: $primaryColor;
+}
+
+// :host ::ng-deep .p-overlay-badge .p-badge {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   transform: translate(50%,-50%);
+//   transform-origin: 100% 0;
+//   margin: 0;
+//   width: 13px;
+//   height: 13px;
+// }

@@ -1,0 +1,74 @@
+<!-- message received {{message|async|json}} -->
+<br><br>
+<div class="form">
+    <h1>Add a Scholarship</h1>
+    <form (ngSubmit)="collectData()" [formGroup]="scholarshipForm" class="register-form">
+
+        <input required type="text" formControlName="name" name="name" class="form-control" placeholder="name" />
+
+
+        <input type="number" formControlName="salary" name="salary" class="form-control" placeholder="salary" />
+
+
+        <input type="number" formControlName="lang_certificate" name="lang_certificate" class="form-control"
+            placeholder="lang_certificate" min="0" max="1" />
+        <div class="error" *ngIf="scholarshipForm.controls['lang_certificate'].hasError('max')">
+            Maximum required number is 1.
+        </div>
+        <div class="error" *ngIf="scholarshipForm.controls['lang_certificate'].hasError('min')">
+            Minimum required number is 0
+        </div>
+
+
+        <input type="text" formControlName="country" name="country" class="form-control" placeholder="country">
+
+        <input type="text" formControlName="opening" name="opening" class="form-control" placeholder="opening">
+
+        <input type="text" formControlName="closing" name="closing" class="form-control" placeholder="closing">
+
+        <input type="number" formControlName="duration" name="duration" class="form-control" placeholder="duration">
+
+        <input type="text" formControlName="thumpnail" name="thumpnail" class="form-control" placeholder="thumpnail">
+        <!-- <input type="file" formControlName="thumpnail" name="thumpnail" class="form-control" placeholder="thumpnail"> -->
+
+
+        <input type="number" formControlName="number_of_seats" name="number_of_seats" class="form-control"
+            placeholder="number_of_seats">
+
+        <input type="number" formControlName="allowed_to_work" name="allowed_to_work" class="form-control"
+            placeholder="allowed_to_work" min="0" max="1">
+        <div class="error" *ngIf="scholarshipForm.controls['allowed_to_work'].hasError('max')">
+            Maximum required number is 1.
+        </div>
+        <div class="error" *ngIf="scholarshipForm.controls['allowed_to_work'].hasError('min')">
+            Minimum required number is 0.
+        </div>
+
+        <select formControlName="study_program" class="form_control"><input type="text" formControlName="study_program"
+                name="study_program" class="form-control" placeholder="study_program">
+            <option value="master">master</option>
+            <option value="doctorate">doctorate</option>
+            <option value="research">research</option>
+        </select>
+
+
+        <input type="number" formControlName="traveling_costs" name="traveling_costs" class="form-control"
+            placeholder="traveling_costs" min="0" max="1">
+        <div class="error" *ngIf="scholarshipForm.controls['traveling_costs'].hasError('max')">
+            Maximum required number is 1.
+        </div>
+        <div class="error" *ngIf="scholarshipForm.controls['traveling_costs'].hasError('min')">
+            Minimum required number is 0.
+        </div>
+
+        <input type="text" formControlName="further_description" name="further_description" class="form-control"
+            placeholder="further_description">
+
+        <input type="number" formControlName="college_score_needed" name="college_score_needed" class="form-control"
+            placeholder="college_score_needed">
+
+
+        <button type="submit">Add Scholarship</button>
+    </form>
+
+</div>

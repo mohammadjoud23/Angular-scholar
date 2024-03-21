@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="grid">
+        <div class="col-12">
+            <div class="p-fluid">
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="search for name , country and more.."
+                        [(ngModel)]="searchValue" (change)="searchChanged()" />
+                </span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="circle">
+            <p-progressSpinner></p-progressSpinner>
+        </div>
+        <div class="grid">
+            <div class="col-6 md:col-3 lg:col-3" *ngFor="let scholarship of scholarships">
+                <app-scholarship-item [itemData]="scholarship" [icon]=true></app-scholarship-item>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="col-12">
+    <div class="p-fluid">
+        <p-dropdown [options]="cities" [(ngModel)]="countries" optionLabel="name" (onChange)="searchChanged()"
+            [filter]="true" filterBy="name" placeholder="Select a Country">
+
+            <ng-template pTemplate="selectedItem">
+                <div class="country-item country-item-value" *ngIf="countries">
+                    <div>{{countries.name}}</div>
+                </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+                <div class="country-item">
+                    <div>{{country.name}}</div>
+                </div>
+            </ng-template>
+        </p-dropdown>
+    </div>
+</div>
+<div>
+    <p-paginator [rows]="12" [totalRecords]="70" (onPageChange)="paginate($event)"></p-paginator>
+</div>

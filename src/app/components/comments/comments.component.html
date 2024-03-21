@@ -1,0 +1,29 @@
+<p-tabView>
+    <p-toast key="t2" position="top-right"></p-toast>
+    <p-tabPanel header="hide comments">
+    </p-tabPanel>
+    <p-tabPanel (click)="postComments(post_id)" header="show comments">
+        <div *ngFor="let comment of coms; let i=index">
+            <div>
+                <p-avatar image="{{comment.user.image|userImage}}" styleClass="mr-2" size="xlarge" shape="circle">
+                </p-avatar>
+                <p class="username">{{comment.user.name}}</p>
+                <p class="comment">{{comment.body}}</p>
+                <p class="date">{{comment.created_at | date:'medium':'GMT+4'}}</p><br><br>
+                <ng-container *ngIf="this.comment.user_id.toString() == this.uId && this.isAdmin ==='0' ">
+                    <button pButton pRipple (click)="deletePostComment(this.comment.id, i)" type="submit"
+                        class="p-button-outlined p-button-danger">Delete</button>
+                </ng-container>
+                <ng-container *ngIf="this.isAdmin ==='1' || this.isManager ==='2'">
+                    <button pButton pRipple (click)="deletePostComment(this.comment.id, i)" type="submit"
+                        class="p-button-outlined p-button-danger">Delete</button>
+                </ng-container>
+                <hr>
+            </div>
+        </div>
+    </p-tabPanel>
+</p-tabView>
+<form [formGroup]="commentForm" (ngSubmit)="addComment(post_id)">
+    <input type="text" pInputText placeholder="type comment" formControlName="body" class="inp">
+    <button pButton pRipple type="submit" class="but" class="p-button-outlined p-button-success">Comment</button>
+</form>

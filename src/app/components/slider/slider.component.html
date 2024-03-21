@@ -1,0 +1,23 @@
+<!-- {{items | json}} -->
+<div class="slider">
+    <ng-container *ngFor="let item of items; let i = index">
+        <div class="slide" *ngIf="i == currentSlideIndex" @slideFade>
+            <div class="slide-bg">
+                <img class="slide-bg-image" [src]="item.thumpnail" alt="Image has been shsmoojed">
+            </div>
+            <div class="slide-pane">
+                <h2 class="name">{{item.name}} </h2>
+                <div class="meta">
+                    <div class="info">
+                        <span class="rating"><span class="app-icon">flag</span>
+                            <span>{{item.country }}</span><span class="rating-value">{{ item.salary | currency
+                                }}</span></span>
+                        <span>{{item.opening}}</span>
+                        <span>{{item.closing}}</span>
+                    </div>
+                </div>
+                <div class="desc mt-6">{{item.further_description}}</div>
+            </div>
+        </div>
+    </ng-container>
+</div>

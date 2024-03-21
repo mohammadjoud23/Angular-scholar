@@ -1,0 +1,89 @@
+@import "../../../styles/colors";
+.scholarship-item {
+  position: relative;
+  display: block;
+  min-height: 325px;
+  border-radius: 5px;
+  background-color: $bgColorLight;
+  border: 1px solid $lightGray;
+
+  &-image {
+    img {
+      width: 100%;
+      border-radius: 5px;
+      height: 275px;
+      object-fit: cover;
+    }
+  }
+  &-rating {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+    background-color: $bgColorLight;
+    border-radius: 5px;
+    padding: 5px 10px;
+    .app-icon {
+      color: #d4af37;
+      margin-right: 5px;
+    }
+  }
+  &-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 0.5rem;
+    height: 30px;
+    justify-content: space-between;
+  }
+}
+
+:host ::ng-deep .p-button {
+  background-color: #ff1011;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+:host ::ng-deep .p-approve {
+  background-color: #17c317;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+
+.p-button:enabled:hover {
+  background: #fc8b16;
+  color: white;
+  border-color: #f3dae1;
+  margin-left: 10px;
+}
+
+.p-button.p-button-help:enabled:hover, .p-buttonset.p-button-help > .p-button:enabled:hover, .p-splitbutton.p-button-help > .p-button:enabled:hover{
+  color: white;
+  background: #aa0303;
+  border-color: #f3dae1;
+}
+.p-button.p-button-help, .p-buttonset.p-button-help > .p-button, .p-splitbutton.p-button-help > .p-button{
+  color: white;
+  background: #e00f0f;
+  border: 1px solid #ffffff;
+  margin: 1px;
+}
+
+.buttons{
+  display: flex;
+  align-items: flex-end;
+  margin-top: -8px;
+  justify-content: space-between;
+}
+
+.p-button.p-button-icon-only.p-button-rounded{
+  border-radius: 50%;
+  height: 2.357rem;
+  margin-left: 10px;
+}
+.manager{display: flex;}

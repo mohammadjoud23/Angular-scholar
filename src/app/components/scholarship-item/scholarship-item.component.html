@@ -1,0 +1,30 @@
+<ng-container *ngIf="itemData">
+    <p-toast key="t2" position="top-right"></p-toast>
+    <div class="scholarship-item">
+        <div class="scholarship-item-rating">
+            <span>{{itemData.country}}</span>
+        </div>
+        <a class="scholarship-item-image" [routerLink]="'/scholarship/'+ itemData.id">
+            <img [src]="itemData.thumpnail" alt="OonzZz" />
+        </a>
+        <div class="scholarship-item-title">
+            {{itemData.name}}
+            <div class="buttons">
+                <button *ngIf=" this.isManager !=='2' " (click)=" featureScholarship(itemData.id,itemData)" pButton
+                    pRipple type="button" icon="pi pi-heart" class="p-button-rounded p-button-help"></button>
+                <div *ngIf=" this.isManager === '2' && buttons == true" class="manager">
+                    <button pButton class="p-approve" label="Approve"
+                        (click)=" approveScholarship(itemData.id,itemData)"></button><br><br>
+                    <button pButton class="p-button" label="Decline"
+                        (click)=" declineScholarship(itemData.id,itemData)"></button><br><br>
+                </div>
+                <button *ngIf="this.isAdmin ==='1' || this.isManager ==='2' && icon == true" pButton
+                    (click)="deleteScholarship(itemData.id)" pRipple type="button" icon="pi pi-times"
+                    class="p-button-rounded p-button-danger"></button>
+
+            </div>
+
+        </div>
+    </div>
+
+</ng-container>

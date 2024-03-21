@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./styles/init-css";
+@import "./styles/colors";
+@import "~primeflex/primeflex.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/arya-orange/theme.css";
+@import "~primeng/resources/primeng.min.css";
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1 4px;
+  color: $white;
+  background-color: $bgColor;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+.app-icon {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"),
+    url(https://example.com/MaterialIcons-Regular.woff) format("woff"),
+    url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+.container {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}

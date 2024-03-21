@@ -1,0 +1,59 @@
+<!-- <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" formControlName="image"
+                        (change)="updateImage($event)"></p-fileUpload> -->
+<p-toast key="tl" position="top-right"></p-toast>
+<header>
+    <nav class="navbar" style="height: 10vh;">
+        <p-sidebar [(visible)]="displaySideBar">
+            <h2>Welcome, {{user_name}}</h2><br><br>
+            <div class="card">
+                <!-- <img [src]="image" width="70px"> -->
+                <p-avatar [image]="image" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                <form (ngSubmit)="uploadImage($event)" [formGroup]="imageForm">
+                    <input formControlName="image" type="file" (change)="updateImage($event)">
+                    <button type="submit">Upload</button>
+                </form>
+            </div><br>
+            <div class="sidebar-links">
+                <a routerLink="/">Home</a><br><br>
+                <div *ngIf="this.isManager ==='2'">
+                    <a routerLink="/admin">Add Scholarship</a><br><br>
+                    <a routerLink="/manager">Pending Scholarships</a><br><br>
+                    <a routerLink="/reports">Reports</a><br><br>
+                </div>
+                <div style="margin: 0px" class="signoutt" pi-sign-out *ngIf="isAuth"><a (click)="signOut()"
+                        routerLink="/login">Signout</a></div><br>
+            </div>
+        </p-sidebar>
+        <div class="sidebar">
+            <p-button *ngIf="isAuth" type="text" (click)="displaySideBar = true" icon="pi pi-bars" label=""></p-button>
+        </div>
+        <img class="logo" src="assets/images/logo.png" alt="" width="70" height="70">
+        <ul class="navbar-links">
+            <li *ngIf="!isAuth"><a routerLink="/">Home</a></li>
+            <li *ngIf="isAuth"><a routerLink="/scholarships">Scholarships</a></li>
+            <li *ngIf="isAuth"><a routerLink="/dashboard">Dashboard</a></li>
+            <li *ngIf="isAuth"><a routerLink="/community">Community</a></li>
+            <li *ngIf="this.isAdmin ==='1'"><a routerLink="/admin">Admin</a></li>
+            <li *ngIf="this.isManager ==='2'"><a routerLink="/managing">Manager</a></li>
+            <li *ngIf="isAuth"><i class="pi pi-bell mr-4 p-text-secondary" pBadge style="font-size: 2rem" [value]="num"
+                    (click)="handleClick()"></i></li>
+        </ul>
+        <div>
+            <div class="riri" *ngIf="!isAuth"><a routerLink="/register">Register<span
+                        class="app-icon">exit_to_app</span>
+                </a></div>
+            <div style="margin: 0px" class="signout" pi-sign-out *ngIf="isAuth"><a (click)="signOut()"
+                    routerLink="/login">Signout<span class="app-icon">exit_to_app</span> </a></div>
+        </div>
+    </nav>
+    <p-dialog header="Notifications" class="dialog" [(visible)]="display" [style]="{width: '60vw',height:'30vw'}"
+        [draggable]="drag" [modal]="true" [dismissableMask]="true">
+        <div *ngFor="let notification of notifications">
+            <p-panel header="{{notification?.title}}">
+                <p>{{notification?.message}}</p>
+            </p-panel>
+            <hr>
+        </div>
+    </p-dialog>
+
+</header>

@@ -1,0 +1,149 @@
+@import "../../../styles/colors";
+// navbar style
+header {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    height: 65px;
+    background-color: $bgColorLight;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    &-logo {
+      display: block;
+      img {
+        width: 60px;
+      }
+    }
+    &-links {
+      display: block;
+      // padding: 0;
+      // margin: 0;
+      margin-right: 1100px;
+      list-style: none;
+
+      li {
+        display: inline;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+.signout {
+  padding: 0;
+  margin-left: 950px;
+}
+.app-icon {
+  align-items: center;
+  font-size: 1rem;
+  padding: 0;
+  margin-left: 3px;
+  margin-top: 20rem;
+}
+
+
+:host ::ng-deep {
+  .p-tabview-nav {
+    justify-content: center;
+
+    li .p-tabview-nav-link {
+      background: $bgColor;
+    }
+    li.p-highlight .p-tabview-nav-link {
+      background: $bgColor;
+    }
+  }
+}
+.poster {
+  max-width: 100%;
+}
+.overview {
+  line-height: 1.5;
+}
+.stat {
+  display: flex;
+  margin-bottom: 15px;
+}
+.label {
+  width: 150px;
+  font-weight: bold;
+}
+.value {
+  color: $primaryColor;
+}
+
+.skeleton {
+  position: absolute;
+  z-index: 0;
+}
+.slider {
+  position: relative;
+  z-index: 1;
+}
+.username {
+  color: #d2fc0a;
+  font-size: 17px;
+  margin-top: 20px;
+}
+.user {
+  justify-content: space-between;
+}
+.date {
+  font-size: 13px;
+  color: darkgrey;
+  margin-left: 7px;
+}
+.comment {
+  font-size: 23px;
+  margin-left: 6px;
+}
+.p-button.p-button-success {
+  margin-bottom: 3.2px;
+  margin-left: 15px;
+  height: 2rem;
+  color: white;
+  background-color: seagreen;
+}
+.inp{
+  margin-top: 23px;
+}
+.p-button.p-button-danger {
+  margin-bottom: 1px;
+  margin-left: 15px;
+  height: 27px;
+  color: white;
+  margin-left: -8px;
+  background-color: #c40c0c;
+  left: 10px;
+}
+
+:host ::ng-deep .pi-heart:before {
+  content: "\e984";
+  color: white;
+}
+:host ::ng-deep .p-button.p-button-icon-only.p-button-rounded {
+  border-radius: 50%;
+  height: 2.357rem;
+  background-color: #e00f0f;
+}
+.p-button.p-button-danger.p-button-outlined:enabled:hover, .p-buttonset.p-button-danger > .p-button.p-button-outlined:enabled:hover, .p-splitbutton.p-button-danger > .p-button.p-button-outlined:enabled:hover{
+background: #aa0303;
+color: white;
+border-color: #f3dae1;
+height: 27px;
+}
+.p-button {
+  color: #ffffff;
+  background-color: chocolate;
+  border: 1px solid darkgrey;
+  height: 33px;
+  padding: 5px;
+}
+.p-button:enabled:hover {
+  background: #f86809;
+  color:#ffffff;
+  border: 1px solid darkgrey;
+  height: 33px;
+  padding: 5px;
+}

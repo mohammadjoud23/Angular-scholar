@@ -1,0 +1,28 @@
+<!-- Form Shsmooj -->
+<p-toast key="t2" position="top-right"></p-toast>
+<div class="login-page">
+    <div class="form">
+        <h1>Register</h1>
+        <form (ngSubmit)="collectData()" [formGroup]="loginForm" class="register-form">
+            <input required type="text" formControlName="name" name="name" class="form-control" placeholder="Name" />
+            <span class="error" *ngIf="name?.invalid && name?.touched">Name Field Is Required</span>
+
+            <input type="email" formControlName="email" name="email" class="form-control" placeholder="Email" />
+            <span class="error" *ngIf="email?.invalid && email?.touched">Email Field Is Required</span>
+
+            <input type="password" formControlName="password" name="password" class="form-control"
+                placeholder="Password" />
+            <span class="error" *ngIf="password?.invalid && password?.touched">Password Field Is Required</span>
+
+            <input type="password" formControlName="password_confirmation" name="password_confirmation"
+                class="form-control" placeholder="Confirm Your Password"> <br> <br>
+            <span class="error" *ngIf="password_confirmation?.invalid && password_confirmation?.touched">Confirm
+                Password Field Is
+                Required</span>
+
+            <button type="submit">Register</button>
+            <p class="message">Already Registered? <a [routerLink]="['/login']">Log In</a></p>
+        </form>
+
+    </div>
+</div>
